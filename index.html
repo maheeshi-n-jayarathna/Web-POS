@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="internet-technologies-assignment-07">
+  <title>Assignment 11</title>
+  <link rel="stylesheet" href="Assests/bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="Assests/bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="Assests/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="Assests/fontawesome/css/fontawesome.min.css">
+  <link rel="stylesheet" href="Assests/style/style.css">
+  <link rel="icon" href="data:image/jpeg;base64,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">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-3 mb-5 bg-white fixed-top" >
+  <div class="container-fluid " >
+    <img src="data:image/jpeg;base64,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MDOnOGPme5R+c3L7mG3tVNKyRWJHxD4Qdxknq59fGZ517vLS1fyXqXxo271TRfNnYv7mlY0NKaVOk9mCMl3A6tpxnuydpW95dNVc1HJLHruT8hnui7u3qsXqMXY95/t5Ca07Ro9mrt3b4nK1XO9NEhERLykREQBERAEREAREQBERAEREAREQBERAM5nT4TxqtbkGm5I/gOSp+Xd6zlxONJqzOptO6LCs+a7WqAK69m3T3l1r8jgn8pm6PDampmalk4UkEqdj1AHf5yvJnMzfCRTvFtepo+Jk1aSTJ9S5btHYVKToUA3UNr97PXOrb0Ii45TtGYlaxp5PwhkIHpneQCZBnexqf3sj2sP7ETprXhdEe8yuRsfeZyTkZ2G3dPRubbWkoWjTcjwACKPTP/qQHMxHwsX4236nfiGvCkvQ6PEeLVq5PaVGIJzpzhR6AbTn5mImhJJWRQ23qxEROnBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQD/2Q==" style="width: 40px; height: 40px">
+    <a class="navbar-brand" href="#">MAHEE POS System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars fa-lg"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <button type="button" id="main-btn" class="btn nav-btn">Home</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" id="customer-btn" class="btn nav-btn">Customer</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" id="item-btn" class="btn nav-btn">Item</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" id="order-btn" class="btn nav-btn">Order</button>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <button class="btn" type="submit">
+          <i class="fa-solid fa-user-plus"></i>Sign Up</button>
+        <button class="btn" type="submit">
+          <i class="fa-solid fa-right-from-bracket"></i>Log Out</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<section id="main">
+  <div id="carouselExampleDark" class="carousel carousel-dark slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://img.freepik.com/free-vector/shop-with-sign-we-are-open_52683-38687.jpg?size=626&ext=jpg" class="d-block" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://img.freepik.com/free-vector/people-standing-store-queue_23-2148594615.jpg?size=626&ext=jpg" class="d-block" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://img.freepik.com/free-vector/cartoon-tea-store-interior-illustration_52683-69401.jpg?size=626&ext=jpg" class="d-block" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+
+<section id="customer">
+  <h6>Home>Customers</h6>
+  <h2><i class="fa-solid fa-people-line" id="hm"></i>  Customer</h2>
+  <div class="container-fluid">
+    <div class="row" style=";background-color: #ffffff;border: 15px solid #bdc3c7;">
+      <div class="col-lg-12" style="padding: 0;">
+        <span style="padding-left: 10px">Customer Search</span>
+      </div>
+      <div class="col-lg-9">
+        <input style="width: 95%;margin-left: 20px;margin-top: 20px;margin-bottom: 20px" type="text" placeholder="Input customer Name/Id ">
+      </div>
+      <div class="col-lg-1">
+        <button type="submit" style="font-weight: bold;margin: 20px; background-color: #303952; border-color: #303952"  data-bs-target="#editCustomerModel" data-bs-toggle="modal" class="btn btn-primary" id="search-btn">Search</button>
+      </div>
+    </div>
+    <div class="row">
+      <dic class="col-lg-1">
+        <button id="btnCustomerEdit" type="submit" style="width: 100px;margin: 10px; background-color: #e58e26; border-color: #e58e26" data-bs-target="#editCustomerModel" data-bs-toggle="modal" class="btn btn-warning">Edit</button>
+        <div id="editCustomerModel" class="modal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header" style="background-color: #0C7075">
+                <h5 class="modal-title">Update Customer</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="txtEditCustomerID" class="form-label">Customer ID :</label>
+                  <input type="text" class="form-control" id="txtEditCustomerID" placeholder="C001">
+                </div>
+                <div class="mb-3">
+                  <label for="txtEditCustomerNIC" class="form-label">Customer NIC :</label>
+                  <input type="text" class="form-control" id="txtEditCustomerNIC" placeholder="200062000066">
+                </div>
+                <div class="mb-3">
+                  <label for="txtEditCustomerName" class="form-label">Customer Name :</label>
+                  <input type="text" class="form-control" id="txtEditCustomerName" placeholder="Maheeshi">
+                </div>
+                <div class="mb-3">
+                  <label for="txtEditCustomerSalary" class="form-label">Salary :</label>
+                  <input type="number" class="form-control" id="txtEditCustomerSalary" placeholder="1000000.00">
+                </div>
+                <div class="mb-3">
+                  <label for="txtEditCustomerAddress" class="form-label">Address :</label>
+                  <input type="text" class="form-control" id="txtEditCustomerAddress" placeholder="Kegalle">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" style="background-color: #57606f; border-color: #57606f" data-bs-dismiss="modal">Close</button>
+                <button id="btn_update" type="button" class="btn btn-primary" style="background-color: #e58e26; border-color: #e58e26">Update</button>
+                <button id="btn_delete" type="button" class="btn btn-danger">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </dic>
+      <dic class="col-lg-1">
+        <button type="submit" style="width: 100px;margin: 10px; background-color: #26de81; border-color: #26de81" data-bs-toggle="modal" data-bs-target="#newCustomerModel" class="btn btn-success">New</button>
+        <div id="newCustomerModel" class="modal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header" style="background-color: #0C7075">
+                <h5 class="modal-title">New Customer</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="txtNewCustomerID" id="lblOne">Customer ID :</label>
+                  <input type="text" class="form-control" id="txtNewCustomerID" placeholder="C001">
+                  <span class="control-error" id="lblCusId"></span>
+                </div>
+                <div class="mb-3">
+                  <label for="txtNewCustomerNIC" id="lblTwo">Customer NIC :</label>
+                  <input type="text" class="form-control" id="txtNewCustomerNIC" placeholder="200062000066">
+                  <span class="control-error" id="lblCusNic"></span>
+                </div>
+                <div class="mb-3">
+                  <label for="txtNewCustomerName" id="lblThree">Customer Name :</label>
+                  <input type="text" class="form-control" id="txtNewCustomerName" placeholder="Maheeshi">
+                  <span class="control-error" id="lblCusName"></span>
+                </div>
+                <div class="mb-3">
+                  <label for="txtNewCustomerSalary" id="lblFour">Salary :</label>
+                  <input type="number" class="form-control" id="txtNewCustomerSalary" placeholder="2000000.00">
+                  <span class="control-error" id="lblCusSalary"></span>
+                </div>
+                <div class="mb-3">
+                  <label for="txtNewCustomerAddress" id="lblFive">Address :</label>
+                  <input type="text" class="form-control" id="txtNewCustomerAddress" placeholder="Kegalle">
+                  <span class="control-error" id="lblCusAddress"></span>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button id="btn_add" type="button" class="btn btn-primary">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dic>
+    </div>
+  </div>
+  <table id="tblCustomer" class="table" style="background-color: #ffffff">
+    <thead class="table-success">
+    <tr>
+      <th class="col-3">Customer ID</th>
+      <th class="col-3">NIC</th>
+      <th class="col-3">Name</th>
+      <th class="col-2">Salary</th>
+      <th class="col-2">Address</th>
+    </tr>
+    </thead>
+    <tbody id="tblCustomerBody">
+
+    </tbody>
+  </table>
+</section>
+
+<section id="item">
+  <h6>Home>Items</h6>
+  <h2><i class="fa-solid fa-boxes-stacked" id="hm1"></i> Items</h2>
+  <div class="container-fluid">
+    <div class="row" style=";background-color: #ffffff;border: 15px solid #bdc3c7;">
+      <div class="col-lg-12" style="padding: 0;">
+        <span style="padding-left: 10px">Item Search</span>
+      </div>
+      <div class="col-lg-9">
+        <input style="width: 95%;margin-left: 20px;margin-top: 20px;margin-bottom: 20px" type="text" placeholder="Input Item Name/Code ">
+      </div>
+      <div class="col-lg-1">
+        <select id="inputSearchType" style="width: 100px;margin: 20px" class="form-select">
+          <option selected>Name</option>
+          <option>Code</option>
+        </select>
+      </div>
+      <div class="col-lg-1">
+        <button type="submit" style="font-weight: bold;margin: 20px; background-color: #303952; border-color: #303952" data-bs-toggle="modal" data-bs-target="#editItemModel" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+    <div class="row">
+      <dic class="col-lg-1">
+        <button id="btnItemEdit" type="submit" style="width: 100px;margin: 10px; background-color: #e58e26; border-color: #e58e26" data-bs-toggle="modal" data-bs-target="#editItemModel" class="btn btn-warning">Edit</button>
+        <div id="editItemModel" class="modal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header" style="background-color: #0C7075">
+                <h5 class="modal-title">Update Item</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="txtEditItemCode" class="form-label">Item Code :</label>
+                  <input type="text" class="form-control" id="txtEditItemCode" placeholder="I001">
+                </div>
+                <div class="mb-3">
+                  <label for="txtEditItemName" class="form-label">Item Name :</label>
+                  <input type="text" class="form-control" id="txtEditItemName" placeholder="Rice">
+                </div>
+                <div class="mb-3">
+                  <label for="txtEditItemPrice" class="form-label">Item Price :</label>
+                  <input type="number" class="form-control" id="txtEditItemPrice" placeholder="520.00">
+                </div>
+                <div class="mb-3">
+                  <label for="txtEditItemQuantity" class="form-label">Item Quantity</label>
+                  <input type="number" class="form-control" id="txtEditItemQuantity" placeholder="2">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" style="background-color: #57606f; border-color: #57606f" data-bs-dismiss="modal">Close</button>
+                <button id="btn-update" type="button" class="btn btn-primary" style="background-color: #e58e26; border-color: #e58e26">Update</button>
+                <button id="btn-delete" type="button" class="btn btn-danger">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dic>
+      <dic class="col-lg-1">
+        <button type="submit" style="width: 100px;margin: 10px; background-color: #26de81; border-color: #26de81" data-bs-toggle="modal" data-bs-target="#newItemModel" class="btn btn-success">New</button>
+        <div id="newItemModel" class="modal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header" style="background-color: #0C7075">
+                <h5 class="modal-title">New Item</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="txtNewItemCode" class="form-label">Item Code :</label>
+                  <input type="text" class="form-control" id="txtNewItemCode" placeholder="I001">
+                </div>
+                <div class="mb-3">
+                  <label for="txtNewItemName" class="form-label">Item Name :</label>
+                  <input type="text" class="form-control" id="txtNewItemName" placeholder="Rice">
+                </div>
+                <div class="mb-3">
+                  <label for="txtNewItemPrice" class="form-label">Item Price :</label>
+                  <input type="number" class="form-control" id="txtNewItemPrice" placeholder="520.00">
+                </div>
+                <div class="mb-3">
+                  <label for="txtNewItemQuantity" class="form-label">Item Quantity</label>
+                  <input type="number" class="form-control" id="txtNewItemQuantity" placeholder="2">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" style="background-color: #57606f; border-color: #57606f" data-bs-dismiss="modal">Close</button>
+                <button id="btn-add" type="button" class="btn btn-primary">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dic>
+    </div>
+  </div>
+  <table class="table" style="background-color: #ffffff">
+    <thead class="table-success">
+    <tr>
+      <th class="col-3">Item Code</th>
+      <th class="col-3">Item Name</th>
+      <th class="col-2">Quantity</th>
+      <th class="col-2">Price</th>
+    </tr>
+    </thead>
+    <tbody id="tblItemBody">
+
+    </tbody>
+  </table>
+</section>
+
+<section id="order">
+  <h6>Home>Orders</h6>
+  <h2><i class="fa-solid fa-cart-fill" id="hm3"></i>Order</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <span>Invoice Details</span>
+        </div>
+        <div class="row" >
+          <div class="col-lg-12">
+            <form class="row g-3">
+              <div class="col-lg-6">
+                <label for="inputOrderId" class="form-label">Order ID :</label>
+                <input type="text" class="form-control" placeholder="O001" id="inputOrderId">
+              </div>
+              <div class="col-lg-6">
+                <label for="inputDate" class="form-label">Date :</label>
+                <input type="date" class="form-control" placeholder="07/06/2020" id="inputDate">
+              </div>
+              <div class="col-lg-6">
+                <label for="inputCustomerId" class="form-label">Customer ID:</label>
+                <select id="inputCustomerId" class="form-select">
+                  <option selected>C001</option>
+                  <option>C002</option>
+                  <option>C003</option>
+                  <option>C004</option>
+                </select>
+              </div>
+              <div class="col-lg-6">
+                <label for="inputCustomerNIC" class="form-label">Customer NIC :</label>
+                <input type="text" class="form-control" placeholder="200127103989" id="inputCustomerNIC">
+              </div>
+              <div class="col-lg-6">
+                <label for="inputName" class="form-label">Name :</label>
+                <input type="text" class="form-control" placeholder="Maheeshi" id="inputName">
+              </div>
+              <div class="col-lg-6">
+                <label for="inputSalary" class="form-label">Salary :</label>
+                <input type="number" class="form-control" placeholder="1000000.00" id="inputSalary">
+              </div>
+              <div class="col-12" style="margin-bottom: 25px">
+                <label for="inputAddress" class="form-label">Address :</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Kegalle">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="row">
+          <span>Item Select</span>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <form class="row g-3 ">
+              <div class="col-lg-6">
+                <label for="inputItem" class="form-label">Item Code :</label>
+                <select id="inputItem" class="form-select">
+                  <option selected>Choose...</option>
+                  <option>I001</option>
+                  <option>I002</option>
+                  <option>I003</option>
+                  <option>I004</option>
+                </select>
+              </div>
+              <div class="col-lg-6">
+                <label for="inputDescription" class="form-label">Description :</label>
+                <input type="text" class="form-control" id="inputDescription" placeholder="Kottu">
+              </div>
+              <div class="col-lg-6">
+                <label for="inputUnitPrice" class="form-label">Unit Price :</label>
+                <input type="number" class="form-control" id="inputUnitPrice" placeholder="600.00">
+              </div>
+              <div class="col-lg-6">
+                <label for="inputQtyOnH" class="form-label">Qty On Hand :</label>
+                <input type="number" class="form-control" id="inputQtyOnH" placeholder="5">
+              </div>
+              <div class="col-lg-12">
+                <label for="inputQty" class="form-label">Order Quantity :</label>
+                <input type="number" class="form-control" id="inputQty" placeholder="2">
+              </div>
+              <div class="col-auto me-auto"></div>
+              <div class="col-auto" style="margin-top: 35px; margin-bottom: 25px">
+                <button type="submit" class="justify-content-end btn btn-primary">Add Item</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-12">
+      <table class="table" style="background-color: #ffffff">
+        <thead class="table-dark">
+        <tr>
+          <th class="col-3">Item Code</th>
+          <th class="col-3">Item Name</th>
+          <th class="col-2">Price</th>
+          <th class="col-2">Quantity</th>
+          <th class="col-2">Total</th>
+        </tr>
+        </thead>
+        <tbody id="tblOrderCartBody">
+
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-12">
+      <form  class="row g-3 summery">
+        <div class="col-lg-12" style="color: #3498db;font-weight: bold; font-size: 22px">
+          Total :
+          <label id="lblTotal">1200</label>
+          Rs/=
+        </div>
+        <div class="col-lg-12" style="color: #2ecc71;font-weight: bold; font-size: 22px">
+          SubTotal :
+          <label id="lblSubTotal">945</label>
+          Rs/=
+        </div>
+        <div class="col-lg-6">
+          <label for="inputCash" class="form-label">Cash :</label>
+          <input type="number" class="form-control" id="inputCash" placeholder="5000">
+        </div>
+        <div class="col-lg-6">
+          <label for="inputDiscount" class="form-label">Discount :</label>
+          <input type="number" class="form-control" id="inputDiscount" placeholder="10">
+        </div>
+        <div class="col-lg-12">
+          <label for="inputBalance" class="form-label">Balance :</label>
+          <input type="number" class="form-control" id="inputBalance" placeholder="10">
+        </div>
+        <div align="center" class="col-lg-12 center-block" style="margin-bottom: 30px">
+          <button id="btnOrderPurchase" type="submit" style="font-weight: bold" class="btn btn-success">Purchase</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <section>
+  </section>
+</section>
+
+<script src="Assests/lib/jQuery/jquery-3.6.4.min.js"></script>
+<script src="Assests/bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+<script src="Assests/js/main.js"></script>
+<script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="db/db.js"></script>
+<script type="module" src="controller/ItemController.js"></script>
+<script type="module" src="controller/OrderController.js"></script>
+
+</body>
+</html>
